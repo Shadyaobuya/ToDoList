@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <h1>Add New Task</h1>
+        <form action="{%url 'addtask'%}" method="POST">
+            {%csrf_token%}
+            {{form}}
+            <button type="submit">Submit</button>
+        </form>
+<a href="{%url 'index'%}">View Tasks</a>
+    </body>
+</html>
