@@ -9,10 +9,5 @@ The app uses Python, Django, Html and Css. Django forms were also used.
 
 The screenshots for the app
 
-[screenshot](https://github.com/Shadyaobuya/ToDoList/blob/master/Screenshot%20from%202021-06-27%2017-24-14.png)
+[screenshot](https://github.com/Shadyaobuya/ToDoList/tree/master/Screenshots)
 
-[screenshot1](https://github.com/Shadyaobuya/ToDoList/blob/master/Screenshot%20from%202021-06-27%2017-24-20.png)
-
-[screenshot2](https://github.com/Shadyaobuya/ToDoList/blob/master/Screenshot%20from%202021-06-27%2017-25-06.png)
-
-[screenshot3](https://github.com/Shadyaobuya/ToDoList/blob/master/Screenshot%20from%202021-06-27%2017-25-10.png)
