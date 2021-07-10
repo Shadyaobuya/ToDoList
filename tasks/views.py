@@ -1,27 +1,23 @@
+from django.contrib import auth
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
 from django import forms
 from django.urls import reverse
 from django.contrib.auth import authenticate,login,logout
-
- 
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+from .forms import UserForm
+# from django.contrib.auth.decorators import login_required
 # Create your views here.
-list_of_tasks=[]
+
 
 class NewTask(forms.Form):
     task=forms.CharField(label="Task",widget=forms.TextInput(attrs={"class":"form-control",'style': 'width: 300px;'}))
     priority=forms.IntegerField(label="Priority",max_value=10,min_value=1,widget=forms.NumberInput(attrs={"class":"form-control ",'style': 'width: 300px;'}))
     duration=forms.IntegerField(label="Duration in Minutes",min_value=30,widget=forms.NumberInput(attrs={"class":" form-control","min":"30",'style': 'width: 300px;'}))
 
-# class Login(forms.Form):
-#      username=forms.CharField()
-#      password=forms.PasswordInput( )
-
-# def index(request):
-#     if not request.user.is_authenticated:
-#         return HttpResponseRedirect(reverse('login'))
-#     return render(request,"tasks/login.html")
-
+def homepage(request):
+    return render (request,"tasks/homepage.html")
 
 def login_page(request):
     if request.method=="POST":
@@ -36,14 +32,31 @@ def login_page(request):
                 "message":"Invalid Username or Password"
             })
     return render(request,"tasks/login.html")
-    
 
-    
+def logout_page(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('login'))
 
+def signup(request):
+    if request.method=="POST":
+        user_form =UserForm(request.POST)
+        if user_form.is_valid():
+            user_form.save()
+            messages.success(request,'Account created successfully')
+            return HttpResponseRedirect(reverse('login'))            
+    else:
+
+        user_form = UserForm()
+    return render(request,'tasks/signup.html',{
+            'form':user_form
+        })
 def my_tasks(request):
+    if "list_of_tasks" not in request.session:
+        request.session["list_of_tasks"]=[]
     return render(request,'tasks/index.html',{
-        "all_tasks":list_of_tasks
+        "all_tasks":request.session["list_of_tasks"]
     })
+
 
 def addTask(request):
     if request.method=="POST":
@@ -52,7 +65,8 @@ def addTask(request):
             task_entered=form_data.cleaned_data["task"]
             duration=form_data.cleaned_data["duration"]
                 
-            list_of_tasks.append(f"{task_entered}..............{duration} Mins")
+            request.session["list_of_tasks"]+=[f"{task_entered}..............{duration} Mins"]
+            # list_of_tasks.append(f"{task_entered}..............{duration} Mins")
 
             # list_of_tasks.append(data)
             return HttpResponseRedirect(reverse("index"))
