@@ -2,12 +2,34 @@
 <html>
     <head>
         <title>
+            To Do List
 
         </title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <style>
+            nav{
+                float: right;
+            }
+             .link{
+                font-size: 20px;
+                color: rgb(190, 190, 17);
+                text-decoration: none;
+                padding:20px ;
 
+            }
+            .link:hover{
+                color: whitesmoke;
+            }                                               
+
+        </style>
     </head>
     <body class="p-3 mb-2 bg-dark text-warning">
+        <nav>
+            <a class="link" href="{%url 'home'%}"> Home</a>
+            <a class="link" href="{%url 'login' %}">Login</a>
+            <a class="link" href="{%url 'logout'%}"> logout</a>
+            
+          </nav>
    
         <h1>Add New Task</h1>
         <form action="{%url 'addtask'%}" method="POST" class ="form-group">

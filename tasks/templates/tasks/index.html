@@ -9,27 +9,36 @@ To Do List
 
 
         <link href="{% static 'styles.css'% }" rel="stylesheet">
-        <!-- <link href="{% static 'styling/style.css'%}" rel ="stylesheet"> -->
         <style>
-            .nav{
+            nav{
                 float: right;
-                padding: 5%;
-                
+                /* margin-top: 3%; */
             }
-            /* a{
+             .link{
+                font-size: 20px;
+                color: rgb(190, 190, 17);
                 text-decoration: none;
-                padding: 40px;
-            } */
+                padding:20px ;
+
+            }
+            .link:hover{
+                color: whitesmoke;
+            } 
+            h4{
+                margin-top: 3%;
+            }                                              
+                                  
+
         </style>
     </head>
     <body class="text-warning bg-dark">
-        <div class="nav">
-            <a href="{%url 'addtask' %}">Add Task</a>
-            <a href="{%url 'logout'%}"> logout</a>
-
-        </div>
-
-        <h4 style="text-align: center;">Welcome back {{request.user.first_name}}</h4>
+        <nav>
+            <a class="link" href="{%url 'home'%}"> Home</a>
+            <a class="link" href="{%url 'login' %}">Login</a>
+            <a class="link" href="{%url 'logout'%}"> logout</a>
+            
+          </nav>
+        <h4 >Welcome back {{request.user.first_name}}</h4>
        
         <ol> 
            

@@ -1,6 +1,15 @@
 {%extends "tasks/layout.html"%}
 {%block body%}
-<h2 style="text-align:center">My Manager</h2>
+<nav>
+  <a class="link" href="{%url 'home'%}"> Home</a>
+  <a class="link" href="{%url 'login' %}">Login</a>
+  <a class="link" href="{%url 'logout'%}"> logout</a>
+  
+</nav>
+<h2 >My Manager</h2>
+
+
+
 <div class="card-deck">
     <div class="card text-white bg-warning mb-3" >
       <div class="card-body">
