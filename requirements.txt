@@ -19,7 +19,7 @@ dbus-python==1.2.16
 # defer==1.0.6
 distlib==0.3.2
 distro==1.4.0
-distro-info===0.23ubuntu1
+# distro-info===0.23ubuntu1
 dj-database-url==0.5.0
 Django==3.2.4
 django-on-heroku==1.1.2
@@ -38,7 +38,7 @@ googleapis-common-protos==1.53.0
 gunicorn==20.1.0
 httplib2==0.19.1
 idna==2.8
-kazam==1.4.5
+# kazam==1.4.5
 keyring==18.0.1
 language-selector==0.1
 launchpadlib==1.10.13
