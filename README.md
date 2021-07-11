@@ -2,12 +2,10 @@
 
 TO DO LIST APP
 
-The to do list app is a simple web app that helps a user note down the activities for the day.
-Once a user has the code in their machine and have Django installed, they can start the python server and navigate to tasks http://127.0.0.1:8000/tasks/.
+This repository is no longer in use
+To view the code, visit[https://github.com/Shadyaobuya/ToDoListApp](https://github.com/Shadyaobuya/ToDoListApp)
 
-The app uses Python, Django, Html and Css. Django forms were also used.
+To use the app, visit [My Manager](https://shadyas-to-do-list.herokuapp.com/)
 
-The screenshots for the app
 
-[screenshot](https://github.com/Shadyaobuya/ToDoList/tree/master/Screenshots)
 
