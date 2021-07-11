@@ -89,8 +89,8 @@ slackclient==2.9.3
 sqlparse==0.4.1
 systemd-python==234
 typing-extensions==3.10.0.0
-ubuntu-advantage-tools==20.3
-ubuntu-drivers-common==0.0.0
+# ubuntu-advantage-tools==20.3
+# ubuntu-drivers-common==0.0.0
 ufw==0.36
 unattended-upgrades==0.1
 uritemplate==3.0.1
